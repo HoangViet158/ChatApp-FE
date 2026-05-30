@@ -1,76 +1,110 @@
-# React + TypeScript + Vite
+# Chat App Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend của hệ thống Chat App được xây dựng bằng React, TypeScript và Vite.
 
-Currently, two official plugins are available:
+## Công nghệ sử dụng
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- TypeScript
+- Vite
+- Axios
+- React Router DOM
+- Tailwind CSS
+- SockJS
+- STOMPJS
 
-## React Compiler
+## Tính năng
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- Đăng ký tài khoản
+- Đăng nhập bằng JWT
+- Quản lý hồ sơ người dùng
+- Danh sách cuộc trò chuyện
+- Chat cá nhân
+- Chat nhóm
+- Gửi và nhận tin nhắn thời gian thực bằng WebSocket
+- Hiển thị trạng thái online/offline
+- Upload avatar
+- Responsive UI
 
-Note: This will impact Vite dev & build performances.
+## Yêu cầu hệ thống
 
-## Expanding the ESLint configuration
+- Node.js 20+
+- npm hoặc yarn
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Cài đặt
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Clone source code:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/your-username/chat-app-frontend.git
+cd chat-app-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Cài đặt dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
-"# ChatApp-FE" 
+
+## Cấu hình môi trường
+
+Tạo file `.env`
+
+```env
+VITE_API_URL=http://localhost:8080/api
+VITE_WS_URL=http://localhost:8080/ws
+```
+
+## Chạy dự án
+
+```bash
+npm run dev
+```
+
+Ứng dụng sẽ chạy tại:
+
+```txt
+http://localhost:5173
+```
+
+## Build Production
+
+```bash
+npm run build
+```
+
+## Preview Production
+
+```bash
+npm run preview
+```
+
+## Cấu trúc thư mục
+
+```txt
+src/
+├── assets/
+├── components/
+├── hooks/
+├── layouts/
+├── pages/
+├── routes/
+├── services/
+├── store/
+├── types/
+├── utils/
+└── App.tsx
+```
+
+## WebSocket
+
+Frontend sử dụng:
+
+- SockJS
+- STOMP
+
+Để nhận tin nhắn realtime từ backend.
+
+## Tác giả
+
+Việt Hoàng
