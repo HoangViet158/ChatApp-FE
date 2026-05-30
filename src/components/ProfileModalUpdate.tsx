@@ -66,8 +66,7 @@ const ProfileModalUpdate = ({
   };
 
   const previewSrc =
-    preview ||
-    getAvatarUrl(form.fullName || form.username, currentAvatarUrl);
+    preview || getAvatarUrl(form.fullName || form.username, currentAvatarUrl);
 
   const inputClass = `
     w-full h-12 px-4 rounded-xl border outline-none text-sm transition
@@ -142,7 +141,6 @@ const ProfileModalUpdate = ({
             value={form.username}
             onChange={handleChange}
             placeholder="Username"
-            className={inputClass}
             disabled
             className={`${inputClass} opacity-60 cursor-not-allowed`}
           />
@@ -179,7 +177,9 @@ const ProfileModalUpdate = ({
             type="button"
             onClick={onClose}
             className={`px-5 py-2.5 rounded-xl text-sm font-medium ${
-              isDark ? "bg-gray-800 hover:bg-gray-700" : "bg-gray-100 hover:bg-gray-200"
+              isDark
+                ? "bg-gray-800 hover:bg-gray-700"
+                : "bg-gray-100 hover:bg-gray-200"
             }`}
           >
             Hủy
