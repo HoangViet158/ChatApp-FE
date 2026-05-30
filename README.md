@@ -105,6 +105,3 @@ Frontend sử dụng:
 
 Để nhận tin nhắn realtime từ backend.
 
-## Tác giả
-
-Việt Hoàng
